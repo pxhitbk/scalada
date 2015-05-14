@@ -11,7 +11,7 @@ package average {
     describe("average calculations") {
       it("calculate the mean should return right value") {
         val data = List(DataFrequently(19, 1), DataFrequently(20, 3), DataFrequently(21, 3))
-        val mean = (new Calculation(data)).mean
+        val mean = (new Averange(data)).mean
         mean should be === 20
       }
       it("Calculate the mean with data that contains outliers should return correct but not represent " +
@@ -22,7 +22,7 @@ package average {
           DataFrequently(21, 3),
           DataFrequently(145,1),
           DataFrequently(147,1))
-        val mean = (new Calculation(data)).mean
+        val mean = (new Averange(data)).mean
         mean should be === 38
       }
       it("Should found upper and lower median number if number of elements is odd") {
@@ -32,7 +32,7 @@ package average {
           DataFrequently(21, 2),
           DataFrequently(100,1),
           DataFrequently(102,1))
-        val median = (new Calculation(data)).median
+        val median = (new Averange(data)).median
         median.length should be === 2
         median(0) should be === 20
         median(1) should be === 21
@@ -44,7 +44,7 @@ package average {
           DataFrequently(21, 2),
           DataFrequently(100,1),
           DataFrequently(102,1))
-        val median = (new Calculation(data)).median
+        val median = (new Averange(data)).median
         median.length should be === 1
         median(0) should be === 20
       }
@@ -58,7 +58,7 @@ package average {
           DataFrequently(6, 2),
           DataFrequently(7, 1),
           DataFrequently(8, 6))
-        val mode = (new Calculation(data)).mode
+        val mode = (new Averange(data)).mode
         mode.length should be === 2
         mode(0) should be === 2
         mode(1) should be === 8
